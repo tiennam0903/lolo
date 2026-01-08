@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Đừng giận win nha 💗</title>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff9acb, #ffc1dd);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Sao băng */
+    .shooting-star {
+        position: absolute;
+        width: 2px;
+        height: 80px;
+        background: linear-gradient(transparent, white);
+        opacity: 0.8;
+        animation: shoot 3s linear infinite;
+    }
+
+    @keyframes shoot {
+        0% {
+            transform: translate(0, 0) rotate(45deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(-600px, 600px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    /* Hộp trung tâm */
+    .box {
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 2;
+    }
+
+    .box h1 {
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    button {
+        border: none;
+        padding: 15px 30px;
+        font-size: 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+        background: #ff4d8d;
+        color: white;
+        transform: scale(1);
+    }
+
+    #noBtn {
+        background: #fff;
+        color: #ff4d8d;
+        transform: scale(1);
+    }
+
+    .sad {
+        font-size: 24px;
+        display: block;
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Sao băng -->
+<script>
+    for (let i = 0; i < 10; i++) {
+        let star = document.createElement("div");
+        star.className = "shooting-star";
+        star.style.top = Math.random() * window.innerHeight + "px";
+        star.style.left = Math.random() * window.innerWidth + "px";
+        star.style.animationDelay = Math.random() * 3 + "s";
+        document.body.appendChild(star);
+    }
+</script>
+
+<div class="box">
+    <h1>Đừng giận Win nx nha,winn coá lí do đột xuất mờ:3, iuu thảo nhất ó:33 nhoaa đừng ghét win nx nhá 🥺</h1>
+    <div class="buttons">
+        <button id="yesBtn">Có 💖</button>
+        <button id="noBtn">
+            Không
+            <span class="sad">😢</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    let yesScale = 1;
+    let noScale = 1;
+
+    noBtn.addEventListener("click", () => {
+        yesScale += 0.2;
+        noScale -= 0.15;
+
+        if (noScale < 0.3) noScale = 0.3;
+
+        yesBtn.style.transform = `scale(${yesScale})`;
+        noBtn.style.transform = `scale(${noScale})`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+        alert("hehehe:33, Win iuu thảo nhất ó:3 💗🥰");
+    });
+</script>
+
+</body>
+</html>
